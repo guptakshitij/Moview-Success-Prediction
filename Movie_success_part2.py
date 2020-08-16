@@ -4,10 +4,10 @@ from textblob import TextBlob
 import numpy as np
 from matplotlib import pyplot as plt
 
-consumer_key = 't86doUv3Rx7iMfGBenTrFhs9l'
-consumer_secret = 'JiUPkM2zlC5qYX5pRzMhGogEHXNWvdIJhlDo83X9HCCYZqYFio'
-access_token = '912270133451571200-U1pn3p4MMIVfpU8kaC4Yi5VTWgmUAeN'
-access_token_secret = 'a4UiQFPtdYKKZRs8kTCXeCDz4Ja8qkjDfxqUGlv28D4af'
+consumer_key = ''
+consumer_secret = ''
+access_token = ''
+access_token_secret = ''
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
@@ -27,7 +27,7 @@ sa_neg=[]
 for c in countries:
     tweets=[]
     print(c['name'])
-    for tweet in tweepy.Cursor(api.search,q="#captainmarvel", lang="en", since="2019-01-04", until="2019-04-11", geocode=c['code']).items(200):
+    for tweet in tweepy.Cursor(api.search,q="#AnyMovieName", lang="en", since="2019-01-04", until="2019-04-11", geocode=c['code']).items(200):
         tweets.append(tweet.text)
         #print(tweet.user)
         
